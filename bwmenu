@@ -355,7 +355,6 @@ copy_totp() {
     fi
 
     echo -n "$totp" | clipboard-set
-    notify-send "TOTP Copied"
   fi
 }
 
@@ -383,8 +382,6 @@ show_copy_notification() {
     # Keep notification visible while the clipboard contents are active.
     extra_options+=("-t" "$((CLEAR * 1000))")
   fi
-  # not sure if icon will be present everywhere, /usr/share/icons is default icon location
-  notify-send "$title" "$body" "${extra_options[@]}" -i /usr/share/icons/hicolor/64x64/apps/bitwarden.png
 }
 
 parse_cli_arguments() {
